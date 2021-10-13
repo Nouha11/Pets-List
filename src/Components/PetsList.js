@@ -1,35 +1,37 @@
 import React from 'react'
 import PetCard from './PetCard';
 
-const PetsList = ({petsList,fitteredPets,clicked}) => { 
+const PetsList = ({petsList,fitteredPets,setFitteredPets,inputText}) => { 
     
     const clickedButton = () => {
-        console.log('clicked')
 
-        if(clicked === false)
-        {    console.log(clicked)
-            return petsList.map( function (el,key){
-                <PetCard 
+                if((fitteredPets.length == 0) || (inputText.length == 0)) {
+                    return petsList.map( (el,key) => (
+                    <PetCard 
+                       el={el}
+                       key={el.Id}
+                       />
+                ))}
+
+            if( inputText.length > 0){
+                
+               return  fitteredPets.map( (el,key) =>
+                (<PetCard 
                    el={el}
                    key={el.Id}
                    />
-               })
-          }
-            else{
-                console.log(clicked)
-            
-                return fitteredPets.map( function (el,key){
-                <PetCard 
-                   el={el}
-                   key={el.Id}
-                   />
-               })}
-};                
-    
+               ))
+
+            };
+
+            setFitteredPets([]);
+};             
+
     return(
        <div className="pets">
            <div className="Lists"> 
-            {clickedButton()}
+
+            {clickedButton() }
             </div>
         </div>
     ); 
