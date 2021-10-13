@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  border: 2px solid black;
+  border-radius: 10px 50px;
+  min-width: 150vh;
+  min-height: 80vh;
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+label, input {
+  margin: 5%;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+label {
+  margin-left: 35%;
+}
+
+.btn-warning, .btn-secondary {
+  height: 40px;
+  border: 6px solid black;
+  text-decoration: none;
+
+}
+
+.Lists {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;  
+
+}
+
+.PetCard{
+  margin: 4%;
+}
