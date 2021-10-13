@@ -9,6 +9,7 @@ function App() {
     {Img:'../dog.jpeg' , Name:'Roxie', Race:'Brownie',Type:'Dog',Location:'Beja',Id:3},
     {Img:'../dog2.jpg' , Name:'Sonne', Race:'Golden',Type:'Dog',Location:'Bizerte',Id:4}
   ]);
+
   const [inputText, setInputText] = useState("");
   const [fitteredPets, setFitteredPets] = useState([]);
 
@@ -36,12 +37,10 @@ const searchHandler = () => {
       <h4> Search for a specific Pet: </h4>
       <br />
       <input value={inputText} onChange={inputTextHandler} type="text" />
-      <Button onClick={() => {
-          searchHandler()}} variant="warning" className="btn-warning" type="submit">Search</Button>
+      <Button onClick={searchHandler} variant="warning" className="btn-warning" type="submit">Search</Button>
       </label>
 
       <div>
-        
       <PetsList  
       petsList={petsList}
       inputText={inputText}
