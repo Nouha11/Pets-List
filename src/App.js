@@ -21,9 +21,10 @@ function App() {
 const searchHandler = () => {  
   setFitteredPets(petsList.filter(
     (el) => (
-      (el.Type.toUpperCase().includes(inputText)) || (el.Type.toLowerCase().includes(inputText)) ||
-      (el.Race.toUpperCase().includes(inputText)) || (el.Race.toLowerCase().includes(inputText)) ||
-      (el.Location.toUpperCase().includes(inputText)) || (el.Location.toLowerCase().includes(inputText))
+      (el.Type.toUpperCase().includes(inputText.toUpperCase())) ||
+      (el.Race.toUpperCase().includes(inputText.toUpperCase())) || 
+      (el.Location.toUpperCase().includes(inputText.toUpperCase())) || 
+      (el.Name.toUpperCase().includes(inputText.toUpperCase()))
       )
       ))
 };
@@ -43,9 +44,8 @@ const searchHandler = () => {
         
       <PetsList  
       petsList={petsList}
-      fitteredPets={fitteredPets}
-      setFitteredPets={setFitteredPets}
       inputText={inputText}
+      fitteredPets={fitteredPets}
       />
       </div>
     </div>
