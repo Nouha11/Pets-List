@@ -11,7 +11,6 @@ function App() {
   ]);
   const [inputText, setInputText] = useState("");
   const [fitteredPets, setFitteredPets] = useState([]);
-  const [clicked, setClicked] = useState(false);
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -19,7 +18,7 @@ function App() {
 
 
 
-const searchHandler = () => {
+const searchHandler = () => {  
   setFitteredPets(petsList.filter(
     (el) => (
       (el.Type.toUpperCase().includes(inputText)) || (el.Type.toLowerCase().includes(inputText)) ||
@@ -37,16 +36,16 @@ const searchHandler = () => {
       <br />
       <input value={inputText} onChange={inputTextHandler} type="text" />
       <Button onClick={() => {
-          searchHandler();
-          setClicked(!clicked);
-      }} variant="warning" className="btn-warning" type="submit">Search</Button>
+          searchHandler()}} variant="warning" className="btn-warning" type="submit">Search</Button>
       </label>
 
       <div>
+        
       <PetsList  
       petsList={petsList}
       fitteredPets={fitteredPets}
-      clicked={clicked}
+      setFitteredPets={setFitteredPets}
+      inputText={inputText}
       />
       </div>
     </div>
